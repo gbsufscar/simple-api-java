@@ -12,7 +12,8 @@ import lombok.Setter;
  * dados de criação de um produto entre a camada de apresentação (como um controlador REST) e 
  * a camada de serviço. 
  * Ele contém os dados necessários para criar um novo produto e fornece um método para 
- * converter esses dados em uma entidade Produto.
+ * converter esses dados em uma entidade Produto. DTO é uma prática comum para separar 
+ * a lógica de negócios da lógica de apresentação e manter a API RESTful.
  */
 
 @Getter // Gera automaticamente os métodos getters para os campos da classe
