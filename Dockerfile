@@ -1,5 +1,5 @@
 # DOCKERFILE PARA CRIAR UMA IMAGEM DA API.
-# Configuração do Docker para facilitar implantação e o gerenciamento em qualquer ambiente de nuvem que suporte containers.
+Get-Command java | Select-Object -ExpandProperty Source# Configuração do Docker para facilitar implantação e o gerenciamento em qualquer ambiente de nuvem que suporte containers.
 
 # Imagem base para a construção da aplicação utlizando o temurin com o maven.
 FROM maven:3.9.8-eclipse-temurin-21 AS build
