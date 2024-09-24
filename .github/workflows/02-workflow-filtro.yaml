@@ -1,0 +1,16 @@
+
+# Workflow para filtrar branches que começam com 'feature/'
+name: 02 - Workflow Filtro
+
+# Evento que aciona o workflow - push para branches que começam com "feature/"
+on:
+  push:
+    branches: 'feature/**'
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exibir o evento
+      # Comando para imprimir o evento que acionou o workflow no terminal utilizando a variável github.event_name
+        run: echo "Workflow disparado por ${{ github.event_name }}"

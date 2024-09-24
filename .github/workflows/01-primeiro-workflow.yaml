@@ -1,15 +1,23 @@
-on: push
+# O workflow será acionado em um push para o repositório
+on: push 
 
+# Definição dos jobs
 jobs:
+    # Job 1 - Imprimir "Olá, Mundo"
     job1-hello:
+        # O job será executado em um ambiente Ubuntu mais recente
         runs-on: ubuntu-latest
+        # Passos do job hello
         steps:
+        # Nome do passo
         - name: Imprimir mensagem
+        # Comando para imprimir "Olá, Mundo" no terminal
           run: echo "Olá, Mundo"
     job2-goodbye:
         runs-on: ubuntu-latest
         steps:
         - name: Step 1 - Sequencia de instruções
+        # Início de uma sequência de comandos usando o pipe |
           run: |
             echo "Uma nova instrução"
             ls            

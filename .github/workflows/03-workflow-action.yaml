@@ -1,29 +1,35 @@
-
+# Este workflow é acionado quando um push é feito em uma branch que começa com "feature/"
 name: 03 - Actions
 
+# O workflow será acionado em um push para o repositório
 on: 
     push:
         branches: "feature/**"
-
+# Definição dos jobs
 jobs:
-    checkout_java_docker:
+    # Nome do job checkout_java_docker que será executado em um ambiente Ubuntu mais recente
+    checkout_java_docker: 
         runs-on: ubuntu-latest
         steps:            
             - name: Git Checkout
+            # Ação para fazer checkout do repositório atual no ambiente de execução do GitHub Actions 
               uses: actions/checkout@v4
 
             - name: Setup Java SDK
+            # Ação para configurar o ambiente com a versão do Java SDK 21 a partir do GitHub Marketplace
               uses: actions/setup-java@v4
               with:
                 distribution: 'temurin' 
                 java-version: '21'
 
             - name: Build
-              uses: docker/build-push-action@v6
+            # Ação para construir e empurrar imagens Docker para um registro de contêiner  
+              uses: docker/build-push-action@v6 
               with:
                 push: false                    
 
             - name: Executar scripts
+            # Comando para executar scripts no ambiente de execução do GitHub Actions 
               run: |
                 git branch
                 java --version 
